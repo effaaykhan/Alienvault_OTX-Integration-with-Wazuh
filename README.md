@@ -212,11 +212,11 @@ if args['file']:
 ```
 - Add the following integration in the ossec.conf file
 ```bash
-   	<integration>
-         <name>custom-alienvault</name>
-               <group>sysmon_event_22</group>
-               <alert_format>json</alert_format>
-    </integration>
+<integration>
+    <name>custom-alienvault</name>
+    <group>sysmon_event_22</group>
+    <alert_format>json</alert_format>
+</integration>
 ```
 
 ## File to be included in /var/ossec/etc/rules
@@ -226,13 +226,13 @@ if args['file']:
 ```
 - Add the following rule in the alienOTX.xml
 ```bash
-   <group name="alienvault_alert,">
-              <rule id="100010" level="12">
-                        <field name="integration">alienvault</field>
-                        <description>AlienVault - OTX DOMAIN Found</description>
-                       <options>no_full_log</options>
-             </rule>
-   </group>
+<group name="alienvault_alert,">
+  <rule id="100010" level="12">
+    <field name="integration">alienvault</field>
+    <description>AlienVault - OTX DOMAIN Found</description>
+    <options>no_full_log</options>
+  </rule>
+</group>
 ```
 
 ## Restart the wazuh-manager
